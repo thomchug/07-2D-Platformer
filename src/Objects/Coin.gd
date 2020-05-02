@@ -1,5 +1,5 @@
 extends Area2D
-onready var PlayerData = preload("res://src/Autoload/PlayerData.gd")
+
 
 onready var anim_player: AnimationPlayer = $AnimationPlayer
 

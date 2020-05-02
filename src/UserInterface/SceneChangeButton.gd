@@ -1,6 +1,6 @@
 tool
 extends Button
-onready var PlayerData = preload("res://src/Autoload/PlayerData.gd")
+
 
 export(String, FILE) var next_scene_path: = ""
 

@@ -1,6 +1,6 @@
 extends Actor
 
-onready var PlayerData = preload("res://src/Autoload/PlayerData.gd")
+
 export var stomp_impulse: = 600.0
 
 
