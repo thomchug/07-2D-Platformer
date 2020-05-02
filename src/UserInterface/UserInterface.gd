@@ -1,5 +1,5 @@
 extends Node
-onready var PlayerData = preload("res://src/Autoload/PlayerData.gd")
+onready var PD = preload("res://src/Autoload/PlayerData.tscn")
 
 onready var scene_tree: SceneTree = get_tree()
 onready var score_label: Label = $Score
@@ -10,9 +10,11 @@ onready var main_screen_button: Button = $PauseOverlay/PauseMenu/MainScreenButto
 const MESSAGE_DIED: = "You died"
 
 var paused: = false setget set_paused
+var PlayerData = null
 
 
 func _ready():
+	PlayerData = PD.instance()
 	PlayerData.connect("updated", self, "update_interface")
 	PlayerData.connect("died", self, "_on_Player_died")
 	PlayerData.connect("reset", self, "_on_Player_reset")
@@ -34,7 +36,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func update_interface() -> void:
-	print(score_label.text)
 	score_label.text = "Score: %s" % PlayerData.score
 
 
