@@ -1,5 +1,4 @@
 extends Node
-onready var PlayerData = preload("res://src/Autoload/PlayerData.gd")
 
 onready var scene_tree: SceneTree = get_tree()
 onready var score_label: Label = $Score
@@ -34,7 +33,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func update_interface() -> void:
-	print(score_label.text)
 	score_label.text = "Score: %s" % PlayerData.score
 
 
